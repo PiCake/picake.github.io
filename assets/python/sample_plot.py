@@ -25,5 +25,9 @@ shift = np.linspace(0, L, ncolors, endpoint=False)
 
 fig = px.line(x=x, y=[np.sin(x + s) for s in shift], labels={'x': 'x-axis', 'y': 'y-axis'}, title="'dark_background' style sheet")
 fig.update_layout(template='plotly_dark')
+fig.update_layout({
+    'plot_bgcolor': 'rgba(0, 0, 0, 0)',
+    'paper_bgcolor': 'rgba(0, 0, 0, 0)',
+})
 
 fig.write_html("./_includes/sample_plot.html")
